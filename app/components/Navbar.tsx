@@ -1,4 +1,4 @@
-import SelectChainType from './selectChainType'
+import SelectChainType from './SelectChainType'
 import { navBox, linkDiv, iconsStyle } from './styles/style.css'
 import { mdText as linkStyle, transparentDiv } from '../app.css'
 import ConnectWalletBtn from './ConnectWalletBtn'
@@ -14,7 +14,7 @@ const Navbar = () => {
             <ul className={linkDiv}>
                 {links.map(link=>{
                     return(
-                        <li key={link} className={`${linkStyle} mr-[4rem]`}>
+                        <li key={link} className={`${linkStyle} mr-[3rem]`}>
                             {link}
                         </li>
                     )

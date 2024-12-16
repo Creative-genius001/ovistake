@@ -8,12 +8,11 @@ export const navBox = style({
   alignItems: 'center',
   justifyContent: "space-between", 
   background: 'transparent',
-  position: 'absolute',
-  left: '0',
-  top: '0',
   padding: '0 8rem',
   width: '100vw',
-  height: '70px'
+  height: '70px',
+  zIndex: '1',
+  position: 'relative'
 });
 
 export const link = style({
@@ -44,4 +43,47 @@ export const gradientBtnStyle = style({
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer'
+})
+
+export const toggleParent = style({
+    background: colors.backgroundTransparent,
+    borderRadius: radius.lg,
+    width: '280px',
+    height: '50px',
+    padding: '4px',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyItems: 'start'
+
+})
+
+export const gradientToggleBar = style({
+    height: '100%',
+    width: '50%',
+    borderRadius: radius.lg,
+    background: colors.buttonGradient,
+    position: 'absolute',
+    zIndex: '0'
+})
+
+export const toggleSpan = style({
+    color: vars.colors.text,
+    fontWeight: '500',
+    fontSize: size.textMD,
+    width: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: '1',
+    cursor: 'pointer',
+})
+
+/* Footer Divider Style */
+export const FooterDividerStyle = style({
+    width: '90%',
+    height: '1px',
+    background: colors.backgroundTransparent, /* Use any color that fits your theme */
+    margin: '16px 0',/* Add some vertical spacing */
+    opacity: '0.8' 
 })

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Stake from "./features/stake/stake";
 
 
 export default function Home() {
@@ -13,8 +14,8 @@ export default function Home() {
   // })
 
   return (
-    <div>
-      Hello World
-    </div>
+    <>
+      <Stake />
+    </>
   );
 }

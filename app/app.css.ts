@@ -7,7 +7,9 @@ import { radius, size } from './theme/size';
 globalStyle('body', {
   margin: 0,
   padding: 0,
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  width: '100vw',
+  overflowX: 'hidden'
 });
 
 export const backgroundDiv = style({
@@ -15,8 +17,8 @@ export const backgroundDiv = style({
   padding: '0',
   margin: '0',
   position: 'relative',
-  height: '100vh',
-  width: '100vw'
+  minHeight: '100vh',
+  width: '100vw',
 })
 
 export const mdText = style({
@@ -30,4 +32,17 @@ export const transparentDiv = style({
   background: colors.backgroundTransparent,
   color: 'white',
 
+})
+
+export const heading01 = style({
+  fontWeight: '700',
+  fontSize: '3.5rem',
+  color: vars.colors.text,
+  marginBottom: '0'
+})
+
+export const ETHLogoStyle = style({
+  width: '1.5rem',
+  height: '1.5rem',
+  marginRight: '0.5rem'
 })
