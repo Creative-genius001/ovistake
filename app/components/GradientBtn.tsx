@@ -1,9 +1,16 @@
+'use client'
+
 import React from 'react'
 import { gradientBtnStyle } from './styles/style.css'
 
-const GradientBtn = ({ value }: { value: string }) => {
+interface GradientButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  value: string,
+  onClickFunc: ()=> void;
+}
+
+const GradientBtn: React.FC<GradientButtonProps> = ({value, onClickFunc}) => {
   return (
-    <div className={`${gradientBtnStyle} px-[32px] py-[14px]`}>{value}</div>
+    <div onClick={onClickFunc} className={`${gradientBtnStyle} px-[32px] py-[14px]`}>{value}</div>
   )
 }
 

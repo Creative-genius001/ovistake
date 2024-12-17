@@ -25,7 +25,7 @@ const UnStakeSection = () => {
               <span className='text-sm font-bold'>24ETH</span>
             </div>
             <div className='mt-6'>
-              <GradientBtn value='Stake' />
+              <GradientBtn value='Unstake' />
             </div>
         </div>
     </div>

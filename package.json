@@ -11,7 +11,10 @@
   "dependencies": {
     "@chakra-ui/react": "^3.2.3",
     "@emotion/react": "^11.14.0",
+    "@metamask/sdk-react": "^0.31.2",
     "@radix-ui/themes": "^3.1.6",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
     "@vanilla-extract/css": "^1.16.1",
     "@vanilla-extract/webpack-plugin": "^2.3.15",
     "class-variance-authority": "^0.7.1",
@@ -19,8 +22,8 @@
     "lucide-react": "^0.468.0",
     "next": "15.1.0",
     "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
@@ -28,8 +31,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "@vanilla-extract/next-plugin": "^2.4.7",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
