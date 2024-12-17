@@ -9,7 +9,7 @@ const Navbar = () => {
     const links = ['Stake', 'Swap', 'Trade', 'Ecosystem']
   return (
     <nav className={navBox}>
-        <div id="logo" className='text-white font-bold w-[100px]'><p className='text-white'>LOGO</p></div>
+        <div id="logo" className='text-white font-bold w-[100px]'><p className='text-white'>Ovistake</p></div>
         <div id="links">
             <ul className={linkDiv}>
                 {links.map(link=>{

@@ -4,6 +4,7 @@ import GradientBtn from '../../components/GradientBtn'
 import ETHLogo from '../../assets/staking/ethereum-eth-logo.svg'
 import Image from 'next/image'
 import { ETHLogoStyle } from '../../app.css'
+import Slider from '../../components/Slider'
 
 
 const StakeSection = () => {
@@ -26,8 +27,8 @@ const StakeSection = () => {
                 <div className='flex'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} /><span className='text-xl font-bold'>ETH</span></div>
               </div>
               <span className='text-sm'>$ 4.00</span>
-              <div id='slider'>
-
+              <div className='mt-4' id='slider'>
+                <Slider />
               </div>
             </div>
             <div className='flex justify-between items-center mt-4'>

@@ -7,7 +7,8 @@ import { backgroundDiv } from "./app.css";
 import Image from "next/image";
 import gradientBlur from './assets/staking/gradient-blur.png'
 import Footer from "./components/Footer";
-
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,14 +30,16 @@ export default function RootLayout({
         className={inter.className}
       >
         <ThemeProvider>
-          <div className={backgroundDiv}>
-            {/* <div className="w-full z-[0] h-[100vh] absolute overflow-hidden  "><Image className=" w-full object-contain top-[-90%] absolute " alt="gradient-glow" src={gradientBlur}/></div> */}
-            <Navbar />
-            <div className="relative z-1">
-              {children}
+          <Theme>
+            <div className={backgroundDiv}>
+              <div className="w-full z-[0] h-[100vh] absolute overflow-hidden  "><Image className=" w-full object-contain top-[-90%] absolute " alt="gradient-glow" src={gradientBlur}/></div>
+              <Navbar />
+              <div className="relative z-1">
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </Theme>
         </ThemeProvider>
       </body>
     </html>

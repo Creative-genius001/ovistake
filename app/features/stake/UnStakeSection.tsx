@@ -1,5 +1,5 @@
 import React from 'react'
-import { stakeButtomDiv, stakeInput, stakeInputContainer, stakeTopDiv } from './style/stake.css'
+import { stakeButtomDiv, stakeInput, stakeInputContainer } from './style/stake.css'
 import GradientBtn from '../../components/GradientBtn'
 import ETHLogo from '../../assets/staking/ethereum-eth-logo.svg'
 import Image from 'next/image'
