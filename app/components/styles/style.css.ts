@@ -33,6 +33,12 @@ export const iconsStyle = style({
     fontSize: '1.4rem'
 })
 
+export const iconsStyleSM = style({
+    color: vars.colors.icon,
+    fontSize: '1.1rem'
+})
+
+
 export const gradientBtnStyle = style({
     color: 'white',
     fontWeight: '500',
@@ -86,4 +92,26 @@ export const FooterDividerStyle = style({
     background: colors.backgroundTransparent, /* Use any color that fits your theme */
     margin: '16px 0',/* Add some vertical spacing */
     opacity: '0.8' 
+})
+
+export const subLinkDividerStyle = style({
+    width: '100%',
+    height: '1px',
+    background: colors.backgroundTransparent, /* Use any color that fits your theme */
+    margin: '8px 0 0 0',/* Add some vertical spacing */
+    opacity: '0.8' 
+})
+
+
+export const settingsDropDown = style({
+    color: 'white',
+    borderRadius: radius.sm,
+    position: 'absolute',
+    background: '#142322',
+    width: '180px',
+    right: '8rem',
+    top: '6rem',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0.3rem 0'
 })
