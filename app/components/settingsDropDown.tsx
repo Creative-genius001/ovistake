@@ -1,6 +1,7 @@
 import React from 'react'
 import { iconsStyle, iconsStyleSM, settingsDropDown, subLinkDividerStyle } from './styles/style.css'
 import { BiChevronLeft } from 'react-icons/bi'
+import { useTheme } from '../context/themeProvider';
 
 interface SettingsMenuProps {
   menuData: Array<{
@@ -21,6 +22,7 @@ interface SettingsMenuProps {
 const SettingsDropDown = ({ menuData, onUpdateSelection }: SettingsMenuProps) => {
 
     const [activeMenu, setActiveMenu] = React.useState<string | null>(null);
+     const { toggleTheme } = useTheme();
     const handleMenuItemClick = (menuId: string) => {
         const hasSubMenu = menuData.find((menu) => menu.id === menuId)?.subMenu;
         if (hasSubMenu) {
@@ -29,6 +31,9 @@ const SettingsDropDown = ({ menuData, onUpdateSelection }: SettingsMenuProps) =>
     };
 
     const handleSubItemClick = (menuId: string, subItemName: string) => {
+        if(menuId === 'theme'){
+            toggleTheme();
+        }
         onUpdateSelection(menuId, subItemName); // Update parent with selected value
         setActiveMenu(null); // Go back to main menu
     };
