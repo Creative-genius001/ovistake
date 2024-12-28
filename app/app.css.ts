@@ -9,7 +9,8 @@ globalStyle('body', {
   padding: 0,
   boxSizing: 'border-box',
   width: '100vw',
-  overflowX: 'hidden'
+  overflowX: 'hidden',
+  fontFamily: 'Inter'
 });
 
 export const backgroundDiv = style({

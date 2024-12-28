@@ -48,7 +48,29 @@ export const gradientBtnStyle = style({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transition: 'background 1s ease',
+
+    ':hover': {
+        background: colors.buttonGradientHover
+    },
+})
+
+export const transparentBtnStyle = style({
+    color: 'white',
+    fontWeight: '500',
+    fontSize: size.textSM,
+    background: colors.backgroundTransparent,
+    borderRadius: radius.sm,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    transition: 'background 1s ease',
+
+    // ':hover': {
+    //     background: colors.buttonGradientHover
+    // },
 })
 
 export const toggleParent = style({
@@ -107,11 +129,41 @@ export const settingsDropDown = style({
     color: 'white',
     borderRadius: radius.sm,
     position: 'absolute',
-    background: '#142322',
+    background: colors.backgroundGray,
     width: '180px',
     right: '8rem',
     top: '6rem',
     display: 'flex',
     flexDirection: 'column',
     padding: '0.3rem 0'
+})
+
+export const connectedButtonTabStyle = style({
+    color: 'white',
+    borderRadius: radius.sm,
+    position: 'absolute',
+    background: colors.backgroundGray,
+    width: '250px',
+    right: '-1.7rem',
+    top: '4rem',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0.5rem'
+})
+
+
+export const disconnectBtn = style({
+    width: '100%',
+    padding: '1rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    backgroundColor: colors.buttonGrey50,
+    borderRadius: radius.sm,
+    fontSize: size.textSM,
+    transition: 'background-color 0.3s ease-in-out',
+
+    ':hover': {
+        backgroundColor: '#203531'
+    }
 })

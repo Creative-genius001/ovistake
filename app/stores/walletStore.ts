@@ -1,32 +1,40 @@
-// 'use client'
+import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
-// import { useSDK } from '@metamask/sdk-react';
-// import { create } from 'zustand';
-// import { persist, createJSONStorage } from 'zustand/middleware';
+type WalletState = {
+  walletAddress: string | null;
+  setWalletAddress: (address: string | null)=> void;
+  connected: boolean;
+  connecting: boolean;
+  setIsConnecting: (connecting: boolean) => void;
+  setConnected: (connected: boolean)=> void;
+  resetState: ()=> void;
+};
 
-// type WalletState = {
-//   account: string | null;
-//   connectWallet: () => Promise<void>;
-// };
+const initialState = {
+    walletAddress: null,
+    connected: false,
+    isConnecting: false,
+    connecting: false,
+}
 
-//  const { sdk, connected, connecting, provider, chainId } = useSDK();
 
-// export const useWalletStore = create<WalletState>()(
-//   persist(
-//     (set) => ({
-//     account: null,
-//     connectWallet: async () => {
-//       try {
-//         const accounts = await sdk?.connect();
-//         set({ account: accounts?.[0] });
-//       } catch (error) {
-//         console.error("Error connecting wallet:", error);
-//       }
-//     },
-//   }),
-//   {
-//       name: 'wallet-store', 
-//       storage: createJSONStorage(() => localStorage),
-//     }
-//   )
-//   );
+
+export const useWalletStore = create<WalletState>()(
+  persist(
+    (set) => ({
+    ...initialState,
+    account: null,
+    connected: false,
+    isConnecting: false,
+    setWalletAddress: (address) => set({ walletAddress : address }),
+    setConnected: (connected)=> ({ connected }),
+    setIsConnecting: (connecting)=> ({ connecting }), 
+    resetState: ()=> set(initialState)
+  }),
+  {
+      name: 'wallet-store', 
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+  );

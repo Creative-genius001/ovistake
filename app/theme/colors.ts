@@ -8,6 +8,7 @@ export const colors = {
   // background color
   backgroundDark: '#040E13',
   backgroundDark50: '#071619',
+  backgroundGray: '#142322',
   backgroundGradient: 'linear-gradient(0deg, rgba(7,22,25,1) 20%, rgba(4,14,19,1) 100%)',
   backgroundMedium: 'var(--background-medium)',
   backgroundLight: 'var(--background-dark)',
@@ -35,13 +36,8 @@ export const colors = {
 
   // button
   buttonGradient: 'linear-gradient(329deg, rgba(70,252,139,1) 5%, rgba(65,252,174,1) 100%)',
-  buttonPrimary: 'var(--button-primary)',
-  buttonPrimary__01: 'var(--button-primary__01)',
-  buttonPrimary__02: 'var(--button-primary__02)',
-  buttonSolidText: 'var(--button-solid-text)',
-  buttonSecondary: 'var(--button-secondary)',
-
-
+  buttonGradientHover: 'linear-gradient(329deg, rgba(54,206,137,1) 5%, rgba(60,211,113,1) 100%)',
+  buttonGrey50: '#1B2D2A',
   // Icon
   iconBg: 'var(--icon-bg)',
   iconEmptyStroke: 'var(--icon-empty-stroke)',

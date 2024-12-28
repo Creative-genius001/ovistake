@@ -5,7 +5,9 @@ import "@radix-ui/themes/styles.css";
 import MainLayout from "./mainLayout";
 
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Ovistake",
