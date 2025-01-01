@@ -1,9 +1,9 @@
 import React from 'react'
-import { FooterDividerStyle } from './styles/style.css'
+import { FooterDividerStyle, FooterSection } from './styles/style.css'
 
 const Footer = () => {
   return (
-    <div className='w-full mt-8 flex flex-col justify-center items-center text-white px-[8rem] py-[2rem]'>
+    <div className={FooterSection}>
         <div className={FooterDividerStyle}></div>
         <div className='w-[90%] flex justify-between mt-4 text-sm'>
             <div className='flex'>

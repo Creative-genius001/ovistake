@@ -74,7 +74,7 @@ const SettingsDropDown = ({ menuData, onUpdateSelection }: SettingsMenuProps) =>
                                     <span className='text-base font-medium flex items-center justify-between w-full'>{menu.primaryName}
                                     {menu.secondaryIcon && React.cloneElement(menu.secondaryIcon as React.ReactElement, { className: iconsStyleSM })} 
                                     </span>
-                                    <span className='text-sm font-normal text-[#d7d7d7]'>{menu.selected}</span>
+                                    <span className='text-sm font-normal text-[#cbcbcb]'>{menu.selected}</span>
                                 </div>
                             </div>
                             </div>

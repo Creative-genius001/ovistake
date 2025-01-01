@@ -1,6 +1,6 @@
 import React from 'react'
 import { toggleParent, toggleSpan, gradientToggleBar } from './styles/style.css'
-import { ToggleStakeProps } from '../features/stake/stake'
+import { ToggleStakeProps } from '../features/stake/Stake'
 
 const ToggleStake = ({stake, handleToggleState}: ToggleStakeProps) => {
   return (

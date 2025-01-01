@@ -10,21 +10,16 @@ export const colors = {
   backgroundDark50: '#071619',
   backgroundGray: '#142322',
   backgroundGradient: 'linear-gradient(0deg, rgba(7,22,25,1) 20%, rgba(4,14,19,1) 100%)',
-  backgroundMedium: 'var(--background-medium)',
-  backgroundLight: 'var(--background-dark)',
-  backgroundLight50: 'var(--background-light50)',
-  backgroundLight30: 'var(--background-light30)',
-  backgroundTransparent12: 'var(--background-transparent12)',
-  backgroundTransparent07: 'var(--background-transparent07)',
-  backgroundTransparent10: 'var(--background-transparent10)',
+
 
   //div
   backgroundTransparent: 'rgba(255,255,255,0.1)',
+  backgroundTransparentGreen: '#DCEFE6',
 
 
   // text
   /** white */
-  textPrimary: '#ffffff',
+  textWhite: '#ffffff',
   /** #abc4ff */
   textSecondary: 'var(--text-secondary)',
   /** #abc4ff80 */
@@ -53,13 +48,5 @@ export const colors = {
 
   // input
   inputMask: 'var(--input-mask)',
-
-  // customize (by V3 frontend coder)
-  backgroundApp: 'var(--background-app)',
-  solidButtonBg: 'var(--solid-button-bg)',
-  outlineButtonBg: 'var(--outline-button-bg)',
-  filledProgressBg: 'var(--filled-progress-bg)',
-  transparentContainerBg: 'var(--transparent-container-bg)',
-  modalContainerBg: 'var(--modal-container-bg)',
 
 }

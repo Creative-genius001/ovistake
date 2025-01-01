@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { colors } from '../../theme';
-import { radius, size } from '../../theme/size';
+import { padding, radius, size } from '../../theme/size';
 import { vars } from '../../theme/theme.css';
 
 export const navBox = style({
@@ -16,7 +16,7 @@ export const navBox = style({
 });
 
 export const link = style({
-    color: colors.textPrimary,
+    color: vars.colors.text,
     fontSize: size.textSM,
     marginRight: '3rem',
     fontWeight: '500'
@@ -74,7 +74,7 @@ export const transparentBtnStyle = style({
 })
 
 export const toggleParent = style({
-    background: colors.backgroundTransparent,
+    background: vars.colors.transparentBackground,
     borderRadius: radius.lg,
     width: '280px',
     height: '50px',
@@ -96,7 +96,7 @@ export const gradientToggleBar = style({
 })
 
 export const toggleSpan = style({
-    color: vars.colors.text,
+    color: colors.textWhite,
     fontWeight: '500',
     fontSize: size.textMD,
     width: '50%',
@@ -107,29 +107,39 @@ export const toggleSpan = style({
     cursor: 'pointer',
 })
 
-/* Footer Divider Style */
 export const FooterDividerStyle = style({
     width: '90%',
     height: '1px',
-    background: colors.backgroundTransparent, /* Use any color that fits your theme */
-    margin: '16px 0',/* Add some vertical spacing */
+    background: vars.colors.transparentBg03, 
+    margin: '16px 0',
     opacity: '0.8' 
+})
+
+export const FooterSection = style({
+    padding: '2rem 8rem',
+    width: '100%',
+    marginTop: '2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: vars.colors.text
 })
 
 export const subLinkDividerStyle = style({
     width: '100%',
     height: '1px',
-    background: colors.backgroundTransparent, /* Use any color that fits your theme */
-    margin: '8px 0 0 0',/* Add some vertical spacing */
+    background: colors.backgroundTransparent, 
+    margin: '8px 0 0 0',
     opacity: '0.8' 
 })
 
 
 export const settingsDropDown = style({
-    color: 'white',
+    color: vars.colors.text,
     borderRadius: radius.sm,
     position: 'absolute',
-    background: colors.backgroundGray,
+    background: vars.colors.transparentBg03,
     width: '180px',
     right: '8rem',
     top: '6rem',

@@ -23,14 +23,14 @@ export const backgroundDiv = style({
 })
 
 export const mdText = style({
-    color: colors.textPrimary,
+    color: vars.colors.text,
     fontSize: size.textSM,
     fontWeight: '500'
 })
 
 export const transparentDiv = style({
   borderRadius: radius.sm,
-  background: colors.backgroundTransparent,
+  background: vars.colors.transparentBg02,
   color: 'white',
 
 })

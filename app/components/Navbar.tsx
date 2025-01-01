@@ -6,7 +6,7 @@ import { mdText as linkStyle, transparentDiv } from '../app.css'
 import ConnectWalletBtn from './ConnectWalletBtn'
 import { TbSettings } from "react-icons/tb";
 import React from 'react'
-import SettingsDropDown from './settingsDropDown'
+import SettingsDropDown from './SettingsDropDown'
 // import SubSettingDropDown from './subSettingDropDown'
 // import { useSettingStore } from '../stores/settingStore'
 import { dropDownLinks as initialMenuData } from '../utils/dropDownLinks'

@@ -1,26 +1,27 @@
 import { style } from '@vanilla-extract/css';
 import { colors } from '../../../theme';
 import { radius, size } from '../../../theme/size';
+import { vars } from '../../../theme/theme.css';
 
 export const stakeTopDiv = style({
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'center', 
   flexDirection: 'column',
-  background: colors.backgroundTransparent,
+  background: vars.colors.transparentBackground,
   borderRadius: radius.sm,
   width: '49%',
   height: '90px',
   padding: '0 16px',
-  color: 'white'
+  color: vars.colors.text
 });
 
 export const stakeButtomDiv = style({
-  background: colors.backgroundTransparent,
+  background: vars.colors.transparentBackground,
   borderRadius: radius.sm,
   padding: '16px 20px',
   marginTop: '.8rem',
-  color: 'white'
+  color: vars.colors.text
 })
 
 export const stakeInputContainer = style({
