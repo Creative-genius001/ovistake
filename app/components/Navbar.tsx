@@ -2,21 +2,34 @@
 
 import SelectChainType from './SelectChainType'
 import { navBox, linkDiv, iconsStyle } from './styles/style.css'
-import { mdText as linkStyle, transparentDiv } from '../app.css'
+import { mdText as linkStyle, mdText, transparentDiv } from '../app.css'
 import ConnectWalletBtn from './ConnectWalletBtn'
 import { TbSettings } from "react-icons/tb";
-import React from 'react'
+import React, { useEffect } from 'react'
 import SettingsDropDown from './SettingsDropDown'
 // import SubSettingDropDown from './subSettingDropDown'
 // import { useSettingStore } from '../stores/settingStore'
 import { dropDownLinks as initialMenuData } from '../utils/dropDownLinks'
+import { useSettingStore } from '../stores/settingStore'
 
 const Navbar = () => {
 
     const links = ['Stake', 'Swap', 'Trade', 'Ecosystem']
-    // const { subDropDownMenuIsActive, dropDownMenuIsActive, onToggleDropDownMenu, onToggleSubDropDownMenu, onLeftArrowClick } = useSettingStore();
     const [menuVisible, setMenuVisible] = React.useState(false);
     const [menuData, setMenuData] = React.useState(initialMenuData); // Track selections
+    const { theme } = useSettingStore();
+
+    useEffect(()=>{
+        const currentTheme = theme.name;
+        const updatedMenuData = menuData.map((menu) => {
+        if (menu.id === 'theme') {
+            return { ...menu, selected: currentTheme }; // Update the theme to match the theme in the store
+        }
+        return menu;
+        });
+        setMenuData(updatedMenuData);
+    },[])
+
 
     const updateMenuSelection = (menuId: string, subItemName: string) => {
         // Update selected value in menuData
@@ -34,7 +47,7 @@ const Navbar = () => {
 
   return (
     <nav className={navBox}>
-        <div id="logo" className='text-white font-bold w-[100px]'><p className='text-white'>Ovistake</p></div>
+        <div id="logo" className='font-bold w-[100px]'><p className={mdText}>Ovistake</p></div>
         <div id="links">
             <ul className={linkDiv}>
                 {links.map(link=>{
