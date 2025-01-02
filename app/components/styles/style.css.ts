@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { colors } from '../../theme';
-import { padding, radius, size } from '../../theme/size';
+import { radius, size } from '../../theme/size';
 import { vars } from '../../theme/theme.css';
 
 export const navBox = style({
@@ -39,21 +39,39 @@ export const iconsStyleSM = style({
 })
 
 
+// const shake = keyframes({
+//   '0%': { transform: 'translateX(0)' },
+//   '25%': { transform: 'translateX(-2px)' },
+//   '50%': { transform: 'translateX(2px)' },
+//   '75%': { transform: 'translateX(-2px)' },
+//   '100%': { transform: 'translateX(0)' },
+// });
+
+
 export const gradientBtnStyle = style({
     color: 'white',
     fontWeight: '500',
     fontSize: size.textSM,
-    background: colors.buttonGradient,
+    backgroundImage: colors.buttonGradient,
     borderRadius: radius.sm,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
-    transition: 'background 1s ease',
+    transition: 'all 0.2s ease-in-out',
+    border: 'none',
+    outline: 'none',
 
-    ':hover': {
-        background: colors.buttonGradientHover
+    selectors: {
+    '&:hover': {
+      transform: 'scale(1.01)',
+      backgroundImage: 'linear-gradient(329deg, rgba(70,252,159,1) 5%, rgba(65,252,204,1) 100%)',
     },
+}
+    // '&:active': {
+    //   animation: `${shake} 0.2s linear`,
+    // },
+    // },
 })
 
 export const transparentBtnStyle = style({
@@ -67,10 +85,6 @@ export const transparentBtnStyle = style({
     alignItems: 'center',
     cursor: 'pointer',
     transition: 'background 1s ease',
-
-    // ':hover': {
-    //     background: colors.buttonGradientHover
-    // },
 })
 
 export const toggleParent = style({
@@ -87,8 +101,8 @@ export const toggleParent = style({
 })
 
 export const gradientToggleBar = style({
-    height: '100%',
-    width: '50%',
+    height: '80%',
+    width: '45%',
     borderRadius: radius.lg,
     background: colors.buttonGradient,
     position: 'absolute',
@@ -96,7 +110,7 @@ export const gradientToggleBar = style({
 })
 
 export const toggleSpan = style({
-    color: colors.textWhite,
+    color: vars.colors.text,
     fontWeight: '500',
     fontSize: size.textMD,
     width: '50%',

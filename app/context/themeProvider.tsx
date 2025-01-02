@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from '../theme/theme.css'
 
 interface ThemeContextProps {
   theme: string;
-  toggleTheme: () => void;
+  toggleTheme: (subItemName: string) => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
@@ -23,12 +23,16 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     if (savedTheme) setTheme(savedTheme);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => {
-      const newTheme = prevTheme === lightTheme ? darkTheme : lightTheme;
-      localStorage.setItem('theme', newTheme);
-      return newTheme;
-    });
+  const toggleTheme = (subItemName: string) => {
+    if(subItemName === 'Light'){
+      setTheme(lightTheme)
+    }
+    if(subItemName === 'Dark'){
+      setTheme(darkTheme)
+    }
+    else{
+      return
+    }
   };
 
   return (

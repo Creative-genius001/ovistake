@@ -6,7 +6,7 @@ const ToggleStake = ({stake, handleToggleState}: ToggleStakeProps) => {
   return (
     <>
         <div className={toggleParent}>
-            <div className={`${gradientToggleBar} ${stake === 'stake' ? 'left-0' : 'right-0'  }`}></div>
+            <div className={`${gradientToggleBar} ${stake === 'stake' ? 'left-1' : 'right-1'  }`}></div>
             <span onClick={()=>handleToggleState('stake')} className={toggleSpan}>Stake</span>
             <span onClick={()=>handleToggleState('unstake')} className={toggleSpan}>Unstake</span>
         </div>

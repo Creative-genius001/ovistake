@@ -32,6 +32,14 @@ export const transparentDiv = style({
   borderRadius: radius.sm,
   background: vars.colors.transparentBg02,
   color: 'white',
+  transition: 'all 0.3s ease-in-out',
+
+  selectors: {
+    '&:hover': {
+      background: vars.colors.transparentBg02Hover,
+    },
+  },
+  
 
 })
 

@@ -14,7 +14,9 @@ export const colors = {
 
   //div
   backgroundTransparent: 'rgba(255,255,255,0.1)',
+  backgroundTransparentHover: 'rgba(255,255,255,0.2)',
   backgroundTransparentGreen: '#DCEFE6',
+  backgroundTransparentGreenHover: '#E8F5EC',
 
 
   // text

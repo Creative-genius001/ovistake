@@ -9,6 +9,7 @@ export const vars = createThemeContract({
     icon: '',
     transparentBackground: '',
     transparentBg02: '',
+    transparentBg02Hover: '',
     transparentBg03: ''
   },
 });
@@ -21,6 +22,7 @@ export const lightTheme = createTheme(vars, {
     icon: 'black',
     transparentBackground: 'white',
     transparentBg02: colors.backgroundTransparentGreen,
+    transparentBg02Hover: colors.backgroundTransparentGreenHover,
     transparentBg03: 'white'
   },
 });
@@ -32,6 +34,7 @@ export const darkTheme = createTheme(vars, {
     icon: '#ffffff',
     transparentBackground: colors.backgroundTransparent,
     transparentBg02: colors.backgroundTransparent,
+    transparentBg02Hover: colors.backgroundTransparentHover,
     transparentBg03: colors.backgroundGray
   },
 });

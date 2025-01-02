@@ -34,7 +34,7 @@ const SettingsDropDown = ({ menuData, onUpdateSelection }: SettingsMenuProps) =>
 
     const handleSubItemClick = (menuId: string, subItemName: string) => {
         if(menuId === 'theme'){
-            toggleTheme();
+            toggleTheme(subItemName);
             const theme = { id: menuId, name: subItemName }
             setTheme(theme)
         }

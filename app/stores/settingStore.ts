@@ -20,7 +20,6 @@ export const useSettingStore = create<SettingState>()(
     ...initialState,
     setTheme: (theme)=>{ 
         set({ theme })
-        console.log(theme)
     },
   }),
   {
