@@ -26,9 +26,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const toggleTheme = (subItemName: string) => {
     if(subItemName === 'Light'){
       setTheme(lightTheme)
+      localStorage.setItem('theme', lightTheme)
     }
     if(subItemName === 'Dark'){
       setTheme(darkTheme)
+      localStorage.setItem('theme', darkTheme)
     }
     else{
       return

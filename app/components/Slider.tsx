@@ -9,7 +9,8 @@ const Slider = () => {
     <div>
         <form>
             <RadixSlider.Root className={RadixRoot} 
-             defaultValue={[count]} 
+             defaultValue={[count]}
+             value={[count]} 
              onValueChange={(value: number[])=>{
               onMoveSlider(value[0])
              }}

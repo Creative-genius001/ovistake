@@ -6,11 +6,34 @@ import Image from 'next/image'
 import { ETHLogoStyle } from '../../app.css'
 import Slider from '../../components/Slider'
 import { useStakeStore } from '../../stores/stakeStore'
+import toast, { Toaster } from 'react-hot-toast';
+import SpinnerLoader from '../../components/SpinnerLoader'
 
 
 const StakeSection = () => {
 
-  const { count , onMoveSlider, annualReward, ethereumPriceInDollars } = useStakeStore();
+  const { count , onMoveSlider, annualReward, ethereumPriceInDollars, resetState } = useStakeStore();
+  const [loading, setLoading] = React.useState<boolean>(false)
+  const onStakeBtnClicked = () => {
+    if(count === 0) return;
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false)
+      toast.success(`Successfully staked ${count} ETH`)
+    }, 7000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+
+    if (!isNaN(Number(inputValue)) && Number(inputValue) <= 5000) {
+      onMoveSlider(Number(e.target.value))
+    }
+  };
+
+  React.useEffect(()=>{
+    resetState()
+  },[])
 
   return (
     <div className='w-[38%] flex flex-col'>
@@ -29,8 +52,10 @@ const StakeSection = () => {
               <div className='flex justify-between mb-2'>
                 <input type='text' placeholder='0' value={count} inputMode='numeric' 
                   pattern='[0-9]*' 
-                  onChange={e => onMoveSlider(Number(e.target.value))}
-                  onInput={(e: any) => {e.target.value = e.target.value.replace(/[^0-9]/g, '')}} 
+                  onChange={handleChange}
+                  onInput={(e: any) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, '')}
+                  } 
                   name='amountToStake' className={stakeInput} 
                 />
                 <div className='flex'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} /><span className='text-xl font-bold'>ETH</span></div>
@@ -45,9 +70,10 @@ const StakeSection = () => {
               <span className='text-sm font-bold'>0.0003ovETH</span>
             </div>
             <div className='mt-6'>
-              <GradientBtn value='Stake' />
+              { loading ? <SpinnerLoader /> : <GradientBtn onClickFunc={onStakeBtnClicked} value='Stake' /> }
             </div>
         </div>
+        <Toaster />
     </div>
   )
 }
