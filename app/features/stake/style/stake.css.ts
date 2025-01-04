@@ -12,7 +12,6 @@ export const stakeMain = style({
   padding: '0',
   margin: '0 auto',
   width: '100%',
-  // backgroundColor: 'red',
 
   [mediaQueries.mobile]: {
     padding: '0 1.2rem'
