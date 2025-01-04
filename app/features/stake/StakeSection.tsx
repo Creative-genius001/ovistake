@@ -9,6 +9,7 @@ import { useStakeStore } from '../../stores/stakeStore'
 import toast, { Toaster } from 'react-hot-toast';
 import SpinnerLoader from '../../components/SpinnerLoader'
 import { useWalletStore } from '../../stores/walletStore'
+import { motion } from 'framer-motion'
 
 
 const StakeSection = () => {
@@ -42,15 +43,20 @@ const StakeSection = () => {
   },[])
 
   return (
-    <div className='lg:w-[38%] sm:w-[100%] flex flex-col'>
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.7 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className='lg:w-[38%] sm:w-[100%] flex flex-col'>
         <div className='flex justify-between'>
             <div className={stakeTopDiv}>
               <span className='text-sm mb-1'>APY</span>
-              <span className='text-2xl font-bold'>2.84%</span>
+              <span className='sm:text-xl lg:text-2xl font-bold'>2.84%</span>
             </div>
             <div className={stakeTopDiv}>
               <span className='text-sm mb-1'>Annual Reward</span>
-              <span className='text-2xl font-bold flex items-center'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} />{annualReward}</span>
+              <span className='sm:text-xl lg:text-2xl font-bold flex items-center'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} />{annualReward}</span>
             </div>
         </div>
         <div className={stakeButtomDiv}>
@@ -64,7 +70,7 @@ const StakeSection = () => {
                   } 
                   name='amountToStake' className={stakeInput} 
                 />
-                <div className='flex'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} /><span className='text-xl font-bold'>ETH</span></div>
+                <div className='flex'><Image alt='ETHLogo' className={ETHLogoStyle} src={ETHLogo} /><span className='sm:text-lg lg:text-xl font-bold'>ETH</span></div>
               </div>
               <span className='text-sm'>$ {ethereumPriceInDollars}</span>
               <div className='mt-4' id='slider'>
@@ -80,7 +86,7 @@ const StakeSection = () => {
             </div>
         </div>
         <Toaster />
-    </div>
+    </motion.div>
   )
 }
 

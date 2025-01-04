@@ -8,9 +8,9 @@ globalStyle('body', {
   margin: 0,
   padding: 0,
   boxSizing: 'border-box',
-  width: '100vw',
-  overflowX: 'hidden',
-  fontFamily: 'Inter'
+  width: '100%',
+  // overflowX: 'hidden',
+  fontFamily: 'Inter',
 });
 
 export const backgroundDiv = style({
@@ -19,7 +19,7 @@ export const backgroundDiv = style({
   margin: '0',
   position: 'relative',
   minHeight: '100vh',
-  width: '100vw',
+  maxWidth: '100%',
 })
 
 export const mdText = style({
@@ -61,7 +61,12 @@ export const heading01 = style({
 export const ETHLogoStyle = style({
   width: '1.5rem',
   height: '1.5rem',
-  marginRight: '0.5rem'
+  marginRight: '0.5rem',
+
+  [mediaQueries.mobile]: {
+    width: '1.2rem',
+    height: '1.2rem',
+  }
 })
 
 export const LogoStyle = style({

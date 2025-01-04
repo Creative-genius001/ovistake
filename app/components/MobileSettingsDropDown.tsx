@@ -44,7 +44,7 @@ const MobileSettingsDropDown = ({ onClose, menuData, onUpdateSelection, isOpen }
 
   return (
     <>
-        <AnimatePresence mode='sync'>
+        <AnimatePresence>
             { isOpen ? <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

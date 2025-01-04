@@ -22,7 +22,8 @@ export const navBox = style({
 export const hamburgerMenu = style({
     color: vars.colors.text,
     fontSize: '2rem',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    marginRight: '0.4rem'
 })
 
 export const dropdownMenuContainerStyle = style({
@@ -146,7 +147,7 @@ export const gradientToggleBar = style({
     borderRadius: radius.lg,
     background: colors.buttonGradient,
     position: 'absolute',
-    zIndex: '0'
+    zIndex: '0',
 })
 
 export const toggleSpan = style({

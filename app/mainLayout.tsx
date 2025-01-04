@@ -38,9 +38,9 @@ export default function MainLayout({
               className="font-inter"
             >
               <div className={backgroundDiv}>
-                <div className="w-full z-[0] h-[100vh] absolute overflow-hidden  "><Image className=" w-full object-contain top-[-90%] absolute " alt="gradient-glow" src={gradientBlur}/></div>
+                <div className="w-full z-[0] h-[100vh] absolute overflow-hidden  "><Image className=" w-full object-contain sm:top-[-10%] lg:top-[-90%] absolute " alt="gradient-glow" src={gradientBlur}/></div>
                 { width < 980 ? <MobileNav /> : <DesktopNav /> }
-                <div className="relative z-1">
+                <div className="relative z-1 w-full">
                   {children}
                 </div>
                 <Footer />

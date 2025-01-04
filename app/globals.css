@@ -3,12 +3,24 @@
 @tailwind utilities;
 /* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
 
+
 .radix-themes {
 	--default-font-family: 'Inter': !important
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -83,11 +95,3 @@ body {
 	}
 }
 
-@layer base {
-	* {
-		@apply border-border;
-	}
-	body {
-		@apply bg-background text-foreground;
-	}
-}

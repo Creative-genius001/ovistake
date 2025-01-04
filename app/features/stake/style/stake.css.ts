@@ -8,7 +8,11 @@ export const stakeMain = style({
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'column',
-  height: '900px',
+  height: '800px',
+  padding: '0',
+  margin: '0 auto',
+  width: '100%',
+  // backgroundColor: 'red',
 
   [mediaQueries.mobile]: {
     padding: '0 1.2rem'
@@ -62,5 +66,9 @@ export const stakeInput = style({
   height: '50px',
   background: 'transparent',
   fontSize: size.text2XL,
-  fontWeight: '500'
+  fontWeight: '500',
+
+  [mediaQueries.mobile]: {
+    fontSize: size.textXL
+  }
 })
