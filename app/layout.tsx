@@ -7,6 +7,7 @@ import MainLayout from "./mainLayout";
 
 const inter = Inter({ 
   subsets: ['latin'],
+  preload: true
 })
 
 export const metadata: Metadata = {

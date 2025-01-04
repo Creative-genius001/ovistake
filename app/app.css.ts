@@ -1,7 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 import { vars } from './theme/theme.css';
-import { colors } from './theme/colors';
 import { radius, size } from './theme/size';
+import { mediaQueries } from './theme/breakpoints';
 
 
 globalStyle('body', {
@@ -45,13 +45,26 @@ export const transparentDiv = style({
 
 export const heading01 = style({
   fontWeight: '700',
-  fontSize: '3.5rem',
+  fontSize: size.text3XL,
   color: vars.colors.text,
-  marginBottom: '0'
+  marginBottom: '0',
+  textAlign: 'center',
+  
+  [mediaQueries.mobile]: {
+    fontSize: size.text2XL,
+    marginBottom: '20px',
+    lineHeight: '40px',
+
+  }
 })
 
 export const ETHLogoStyle = style({
   width: '1.5rem',
   height: '1.5rem',
   marginRight: '0.5rem'
+})
+
+export const LogoStyle = style({
+  width: '40px',
+  height: '40px'
 })

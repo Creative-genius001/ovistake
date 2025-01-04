@@ -1,7 +1,33 @@
 import { style } from '@vanilla-extract/css';
-import { colors } from '../../../theme';
 import { radius, size } from '../../../theme/size';
 import { vars } from '../../../theme/theme.css';
+import { mediaQueries } from '../../../theme';
+
+
+export const stakeMain = style({
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  height: '900px',
+
+  [mediaQueries.mobile]: {
+    padding: '0 1.2rem'
+  }
+  
+});
+
+export const stakeSection01 = style({
+  display: 'flex',
+  justifyContent: 'center', 
+  alignItems: 'center',
+  flexDirection: 'column',
+  marginTop: '3rem',
+  width: '50%',
+
+  [mediaQueries.mobile]: {
+    width: '100%'
+  }
+});
 
 export const stakeTopDiv = style({
   display: 'flex',

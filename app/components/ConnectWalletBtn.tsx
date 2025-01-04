@@ -2,10 +2,11 @@
 
 import React from 'react'
 import GradientBtn from './GradientBtn'
-import WalletConnectedBtn from './walletConnectedBtn';
+import WalletConnectedBtn from './WalletConnectedBtn';
 import { useWalletStore } from '../stores/walletStore';
 import { truncateAddress } from '../utils/truncateWalletAddress';
 import { useSDK } from '@metamask/sdk-react';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -18,15 +19,17 @@ const ConnectWalletBtn = () => {
         setIsConnecting(connecting)
         const accounts = await sdk?.connect();
         if(!accounts) {
-          console.error('Error connecting wallet');
+          toast.error('Error connecting wallet!')
           return;
         }
         setWalletAddress(accounts?.[0]);
         setConnected(connected)
         setIsConnecting(connecting)
+        toast.success('Wallet connected successfully')
       } catch (error) {
         setIsConnecting(connecting)
-        console.error('Error connecting wallet:', error);
+        toast.error('Error connecting wallet!')
+        console.log('Error connecting wallet:', error);
       }
   }
   
@@ -35,6 +38,7 @@ const ConnectWalletBtn = () => {
   return (
     <>
       {truncatedAddress ? <WalletConnectedBtn value={truncatedAddress} /> : <GradientBtn onClickFunc={connectWallet} value='Connect Wallet' />}
+      <Toaster />
     </>
   )
 }

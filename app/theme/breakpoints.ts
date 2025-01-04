@@ -1,7 +1,7 @@
 // styles/breakpoints.ts
 export const breakpoints = {
   mobile: '640px',
-  tablet: '768px',
+  tablet: '960px',
   desktop: '1024px',
 };
 

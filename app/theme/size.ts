@@ -1,10 +1,11 @@
 export const size = {
     
-    text2XL :"32px",
-    textSM :"14px",
-    textMD :"16px",
-    textLG :"24px",
-    textXL :"28px"
+    text3XL: '48px',
+    text2XL :'38px',
+    textSM :'14px',
+    textMD :'16px',
+    textLG :'20px',
+    textXL :'28px'
 
 }
 

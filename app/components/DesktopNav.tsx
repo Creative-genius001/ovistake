@@ -2,28 +2,30 @@
 
 import SelectChainType from './SelectChainType'
 import { navBox, linkDiv, iconsStyle } from './styles/style.css'
-import { mdText as linkStyle, mdText, transparentDiv } from '../app.css'
+import { mdText as linkStyle, LogoStyle, transparentDiv } from '../app.css'
 import ConnectWalletBtn from './ConnectWalletBtn'
 import { TbSettings } from "react-icons/tb";
-import React, { useEffect } from 'react'
+import React from 'react'
 import SettingsDropDown from './SettingsDropDown'
-// import SubSettingDropDown from './subSettingDropDown'
-// import { useSettingStore } from '../stores/settingStore'
+import Logo from '../assets/logo.png'
 import { dropDownLinks as initialMenuData } from '../utils/dropDownLinks'
 import { useSettingStore } from '../stores/settingStore'
+import Image, { StaticImageData } from 'next/image'
 
-const Navbar = () => {
+const DesktopNav = () => {
 
     const links = ['Stake', 'Swap', 'Trade', 'Ecosystem']
     const [menuVisible, setMenuVisible] = React.useState(false);
     const [menuData, setMenuData] = React.useState(initialMenuData); // Track selections
-    const { theme } = useSettingStore();
+    const { theme, language } = useSettingStore();
 
-    useEffect(()=>{
-        const currentTheme = theme.name;
+    React.useEffect(()=>{
         const updatedMenuData = menuData.map((menu) => {
         if (menu.id === 'theme') {
-            return { ...menu, selected: currentTheme }; // Update the theme to match the theme in the store
+            return { ...menu, selected: theme };
+        }
+        if (menu.id === 'language') {
+            return { ...menu, selected: language };
         }
         return menu;
         });
@@ -31,23 +33,22 @@ const Navbar = () => {
     },[])
 
 
-    const updateMenuSelection = (menuId: string, subItemName: string) => {
-        // Update selected value in menuData
+    const updateMenuSelection = (menuId: string, subMenuName: string, subMenuIcon: StaticImageData) => {
         const updatedMenuData = menuData.map((menu) => {
         if (menu.id === menuId) {
-            return { ...menu, selected: subItemName }; // Update the selected value
+            return { ...menu, selectedName: subMenuName, selectedIcon: subMenuIcon}; 
         }
         return menu;
         });
 
         setMenuData(updatedMenuData);
-        setMenuVisible(false); // Optionally close the settings menu
+        setMenuVisible(false);
     };
 
 
   return (
     <nav className={navBox}>
-        <div id="logo" className='font-bold w-[100px]'><p className={mdText}>Ovistake</p></div>
+        <div id="logo" className='font-bold w-[100px]'><Image className={LogoStyle} alt='Ovistake' src={Logo} /></div>
         <div id="links">
             <ul className={linkDiv}>
                 {links.map(link=>{
@@ -69,4 +70,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default DesktopNav

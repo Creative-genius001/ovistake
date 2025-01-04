@@ -5,6 +5,7 @@ import { transparentBtnStyle } from './styles/style.css'
 import ConnectedButtonTab from './ConnectedButtonTab'
 import { useWalletStore } from '../stores/walletStore'
 import { useSDK } from '@metamask/sdk-react'
+import toast, { Toaster } from 'react-hot-toast'
 
 interface WalletConnectedBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   value: string,
@@ -25,7 +26,8 @@ const WalletConnectedBtn: React.FC<WalletConnectedBtnProps> = ({value}) => {
         setToggleMenuActive(false)
         
       } catch (error) {
-        console.error('Error disconnecting', error)
+        toast.error('Error: Could not disconnect!')
+        console.log('Error disconnecting', error)
       }
   }
 
@@ -33,6 +35,7 @@ const WalletConnectedBtn: React.FC<WalletConnectedBtnProps> = ({value}) => {
     <div className='relative'>
       <div onClick={toggleMenu} className={`${transparentBtnStyle} px-[32px] py-[14px]`}>{value}</div>
       {toggleMenuActive && <ConnectedButtonTab onClickDisconnectBtn={disconnectWallet}  />}
+      <Toaster />
     </div>
   )
 }

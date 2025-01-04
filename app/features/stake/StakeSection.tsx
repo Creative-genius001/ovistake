@@ -8,13 +8,19 @@ import Slider from '../../components/Slider'
 import { useStakeStore } from '../../stores/stakeStore'
 import toast, { Toaster } from 'react-hot-toast';
 import SpinnerLoader from '../../components/SpinnerLoader'
+import { useWalletStore } from '../../stores/walletStore'
 
 
 const StakeSection = () => {
 
   const { count , onMoveSlider, annualReward, ethereumPriceInDollars, resetState } = useStakeStore();
+  const { walletAddress } = useWalletStore();
   const [loading, setLoading] = React.useState<boolean>(false)
   const onStakeBtnClicked = () => {
+    if(!walletAddress){
+      toast('Connect to Metamask')
+      return;
+    }
     if(count === 0) return;
     setLoading(true);
     setTimeout(()=>{
@@ -36,7 +42,7 @@ const StakeSection = () => {
   },[])
 
   return (
-    <div className='w-[38%] flex flex-col'>
+    <div className='lg:w-[38%] sm:w-[100%] flex flex-col'>
         <div className='flex justify-between'>
             <div className={stakeTopDiv}>
               <span className='text-sm mb-1'>APY</span>
@@ -49,7 +55,7 @@ const StakeSection = () => {
         </div>
         <div className={stakeButtomDiv}>
             <div className={stakeInputContainer}>
-              <div className='flex justify-between mb-2'>
+              <div className='flex justify-between items-center mb-2'>
                 <input type='text' placeholder='0' value={count} inputMode='numeric' 
                   pattern='[0-9]*' 
                   onChange={handleChange}

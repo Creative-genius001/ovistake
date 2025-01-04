@@ -10,7 +10,8 @@ export const vars = createThemeContract({
     transparentBackground: '',
     transparentBg02: '',
     transparentBg02Hover: '',
-    transparentBg03: ''
+    transparentBg03: '',
+    disconnectBtnBg: ''
   },
 });
 
@@ -23,7 +24,8 @@ export const lightTheme = createTheme(vars, {
     transparentBackground: 'white',
     transparentBg02: colors.backgroundTransparentGreen,
     transparentBg02Hover: colors.backgroundTransparentGreenHover,
-    transparentBg03: 'white'
+    transparentBg03: 'white',
+    disconnectBtnBg: colors.backgroundTransparentGreen
   },
 });
 
@@ -35,6 +37,7 @@ export const darkTheme = createTheme(vars, {
     transparentBackground: colors.backgroundTransparent,
     transparentBg02: colors.backgroundTransparent,
     transparentBg02Hover: colors.backgroundTransparentHover,
-    transparentBg03: colors.backgroundGray
+    transparentBg03: colors.backgroundGray,
+    disconnectBtnBg: colors.buttonGrey50
   },
 });

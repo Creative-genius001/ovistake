@@ -1,5 +1,5 @@
-import { keyframes, style } from '@vanilla-extract/css';
-import { colors } from '../../theme';
+import {  style } from '@vanilla-extract/css';
+import { colors, mediaQueries } from '../../theme';
 import { radius, size } from '../../theme/size';
 import { vars } from '../../theme/theme.css';
 
@@ -12,14 +12,50 @@ export const navBox = style({
   width: '100vw',
   height: '70px',
   zIndex: '1',
-  position: 'relative'
+  position: 'relative',
+
+  [mediaQueries.mobile]: {
+    padding: '0 1.2rem'
+  }
 });
+
+export const hamburgerMenu = style({
+    color: vars.colors.text,
+    fontSize: '2rem',
+    cursor: 'pointer'
+})
+
+export const dropdownMenuContainerStyle = style({
+  position: 'fixed',
+  inset: 0, 
+  backgroundColor: 'transparent', 
+  height: '100vh',
+  backdropFilter: 'blur(10px)', 
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '2rem',
+  zIndex: '10000'
+});
+
+export const closeDropDownIconStyle = style({
+    color: vars.colors.text,
+    fontSize: '2rem'
+})
 
 export const link = style({
     color: vars.colors.text,
     fontSize: size.textSM,
     marginRight: '3rem',
     fontWeight: '500'
+})
+
+export const mobileLinkStyle = style({
+    color: vars.colors.text,
+    fontSize: size.textLG,
+    fontWeight: '600',
+    marginBottom: '1rem'
 })
 
 export const linkDiv = style({
@@ -75,10 +111,10 @@ export const gradientBtnStyle = style({
 })
 
 export const transparentBtnStyle = style({
-    color: 'white',
+    color: vars.colors.text,
     fontWeight: '500',
     fontSize: size.textSM,
-    background: colors.backgroundTransparent,
+    background: vars.colors.transparentBg02,
     borderRadius: radius.sm,
     display: 'flex',
     justifyContent: 'center',
@@ -96,7 +132,11 @@ export const toggleParent = style({
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
-    justifyItems: 'start'
+    justifyItems: 'start',
+
+    [mediaQueries.mobile]: {
+        width: '230px'
+    }
 
 })
 
@@ -117,7 +157,7 @@ export const toggleSpan = style({
     display: 'flex',
     justifyContent: 'center',
     position: 'relative',
-    zIndex: '1',
+    zIndex: '0',
     cursor: 'pointer',
 })
 
@@ -137,7 +177,11 @@ export const FooterSection = style({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    color: vars.colors.text
+    color: vars.colors.text,
+
+    [mediaQueries.mobile]: {
+        padding: '2rem 1.2rem',
+    }
 })
 
 export const subLinkDividerStyle = style({
@@ -162,11 +206,24 @@ export const settingsDropDown = style({
     padding: '0.3rem 0'
 })
 
-export const connectedButtonTabStyle = style({
-    color: 'white',
+export const MobileSettingsDropDownStyle = style({
+    color: vars.colors.text,
     borderRadius: radius.sm,
     position: 'absolute',
-    background: colors.backgroundGray,
+    background: vars.colors.transparentBg03,
+    width: '180px',
+    left: '0rem',
+    bottom: '4rem',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0.3rem 0'
+})
+
+export const connectedButtonTabStyle = style({
+    color: vars.colors.text,
+    borderRadius: radius.sm,
+    position: 'absolute',
+    background: vars.colors.transparentBg03,
     width: '250px',
     right: '-1.7rem',
     top: '4rem',
@@ -182,7 +239,7 @@ export const disconnectBtn = style({
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
-    backgroundColor: colors.buttonGrey50,
+    backgroundColor: vars.colors.disconnectBtnBg,
     borderRadius: radius.sm,
     fontSize: size.textSM,
     transition: 'background-color 0.3s ease-in-out',
