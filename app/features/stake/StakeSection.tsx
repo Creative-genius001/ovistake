@@ -65,7 +65,7 @@ const StakeSection = () => {
                 <input type='text' placeholder='0' value={count} inputMode='numeric' 
                   pattern='[0-9]*' 
                   onChange={handleChange}
-                  onInput={(e: any) => {
+                  onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
                     e.target.value = e.target.value.replace(/[^0-9]/g, '')}
                   } 
                   name='amountToStake' className={stakeInput} 
