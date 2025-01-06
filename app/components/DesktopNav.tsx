@@ -1,12 +1,12 @@
 'use client'
 
-import SelectChainType from './SelectChainType'
+import SelectChainType from './selectChainType'
 import { navBox, linkDiv, iconsStyle } from './styles/style.css'
 import { mdText as linkStyle, LogoStyle, transparentDiv } from '../app.css'
 import ConnectWalletBtn from './ConnectWalletBtn'
 import { TbSettings } from "react-icons/tb";
 import React from 'react'
-import SettingsDropDown from './SettingsDropDown'
+import SettingsDropDown from './settingsDropDown'
 import Logo from '../assets/logo.png'
 import { dropDownLinks as initialMenuData } from '../utils/dropDownLinks'
 import { useSettingStore } from '../stores/settingStore'

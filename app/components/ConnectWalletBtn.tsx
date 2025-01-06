@@ -2,7 +2,7 @@
 
 import React from 'react'
 import GradientBtn from './GradientBtn'
-import WalletConnectedBtn from './WalletConnectedBtn';
+import WalletConnectedBtn from './walletConnectedBtn';
 import { useWalletStore } from '../stores/walletStore';
 import { truncateAddress } from '../utils/truncateWalletAddress';
 import { useSDK } from '@metamask/sdk-react';

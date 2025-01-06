@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import React from 'react'
 import { closeDropDownIconStyle, dropdownMenuContainerStyle, mobileLinkStyle, MobileSettingsDropDownStyle } from './styles/style.css'
 import { MdClose } from "react-icons/md";
-import { SettingsMenuProps } from './SettingsDropDown';
+import { SettingsMenuProps } from './settingsDropDown';
 import Image, { StaticImageData } from 'next/image';
 import { useTheme } from '../context/themeProvider';
 import { useSettingStore } from '../stores/settingStore';

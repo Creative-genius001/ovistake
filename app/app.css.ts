@@ -9,7 +9,6 @@ globalStyle('body', {
   padding: 0,
   boxSizing: 'border-box',
   width: '100%',
-  // overflowX: 'hidden',
   fontFamily: 'Inter',
 });
 
