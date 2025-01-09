@@ -32,6 +32,7 @@ export const dropdownMenuContainerStyle = style({
   backgroundColor: 'transparent', 
   height: '100vh',
   backdropFilter: 'blur(10px)', 
+  WebkitBackdropFilter: 'blur(10px)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
