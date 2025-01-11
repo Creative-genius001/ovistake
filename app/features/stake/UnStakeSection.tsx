@@ -36,8 +36,9 @@ const UnStakeSection = () => {
     resetState()
   },[resetState])
 
-  const handleValueChange = (arg: any) =>{
-      onUnstakeInputChange(arg)
+  const handleValueChange = (arg: string) =>{
+      const value = Number(arg)
+      onUnstakeInputChange(value)
   }
 
   return (
