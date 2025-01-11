@@ -7,6 +7,7 @@ import { CgMenuRight } from "react-icons/cg";
 import MobileSettingsDropDown from './MobileSettingsDropDown'
 import { dropDownLinks as initialMenuData } from '../utils/dropDownLinks'
 import { useSettingStore } from '../stores/settingStore'
+import ConnectWalletBtn from './ConnectWalletBtn'
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -45,8 +46,8 @@ const MobileNav = () => {
   return (
     <nav className={navBox} >
       <div id="logo" className='font-bold w-1/2 flex justify-start'><Image className={LogoStyle} alt='Ovistake' src={Logo} /></div>
+      <ConnectWalletBtn />
       <div  onClick={toggleMenu} className='w-1/2 flex justify-end'><CgMenuRight className={hamburgerMenu} /></div>
-
       {isOpen && <MobileSettingsDropDown menuData={menuData} isOpen={isOpen} onUpdateSelection={updateMenuSelection} onClose={toggleMenu} />}
     </nav>
   )

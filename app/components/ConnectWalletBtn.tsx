@@ -7,11 +7,13 @@ import { useWalletStore } from '../stores/walletStore';
 import { truncateAddress } from '../utils/truncateWalletAddress';
 import { useSDK } from '@metamask/sdk-react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useWindowSize } from '../hooks/useWindowBreakpoint';
 
 
 
 const ConnectWalletBtn = () => {
   const { walletAddress, setWalletAddress, setIsConnecting, setConnected } = useWalletStore();
+  const width = useWindowSize();
   const { sdk, connected, connecting } = useSDK();
 
   const connectWallet = async() => {
@@ -37,7 +39,7 @@ const ConnectWalletBtn = () => {
 
   return (
     <>
-      {truncatedAddress ? <WalletConnectedBtn value={truncatedAddress} /> : <GradientBtn onClickFunc={connectWallet} value='Connect Wallet' />}
+      {truncatedAddress ? <WalletConnectedBtn value={truncatedAddress} /> : <GradientBtn onClickFunc={connectWallet} value={ width < 980 ? 'Connect' : 'Connect Wallet' } />}
       <Toaster />
     </>
   )

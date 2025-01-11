@@ -105,7 +105,7 @@ export const gradientBtnStyle = style({
       transform: 'scale(1.01)',
       backgroundImage: 'linear-gradient(329deg, rgba(70,252,159,1) 5%, rgba(65,252,204,1) 100%)',
     },
-}
+    },
     // '&:active': {
     //   animation: `${shake} 0.2s linear`,
     // },

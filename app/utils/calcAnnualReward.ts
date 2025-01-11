@@ -2,6 +2,17 @@ const averageProjectYeild = 0.0289;
 const EthereumPrice = 3323;
 
 
+export const convertEthereumToOvETH = (selectedEthereumAmount: number) => {
+    const result = selectedEthereumAmount / 0.965;
+    return (result.toFixed(2))
+}
+
+export const convertOvETHtoEthereum = (selectedEthereumAmount: number) => {
+    const result = selectedEthereumAmount *  0.965;
+    return (result.toFixed(2))
+}
+
+
 export const projectAnnualReward = (selectedEthereumAmount: number) => {
     const result = averageProjectYeild * selectedEthereumAmount;
     return(result.toFixed(2));

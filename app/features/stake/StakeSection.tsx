@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
 
 const StakeSection = () => {
 
-  const { count , onMoveSlider, annualReward, ethereumPriceInDollars, resetState } = useStakeStore();
+  const { count , onMoveSlider, annualReward, ethereumPriceInDollars, resetState, ovETHStake } = useStakeStore();
   const { walletAddress } = useWalletStore();
   const [loading, setLoading] = React.useState<boolean>(false)
   const onStakeBtnClicked = () => {
@@ -79,7 +79,7 @@ const StakeSection = () => {
             </div>
             <div className='flex justify-between items-center mt-4'>
               <p className='text-sm'>You will recieve</p>
-              <span className='text-sm font-bold'>0.0003ovETH</span>
+              <span className='text-sm font-bold'>{ovETHStake}ovETH</span>
             </div>
             <div className='mt-6'>
               { loading ? <SpinnerLoader /> : <GradientBtn onClickFunc={onStakeBtnClicked} value='Stake' /> }
